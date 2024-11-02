@@ -1,0 +1,22 @@
+// Primary Colors
+$primary-color: #3498db;
+$primary-dark : darken($primary-color, 10%);
+
+// Danger Colors
+$danger-color: #e74c3c;
+$danger-dark : darken($danger-color, 10%);
+
+// Backgrounds
+$bg-color: #f4f4f9;
+$bg-dark : #e4e4ed;
+$bg-light: #fdfdfd;
+
+// Typography
+$text-color: #555;
+$text-muted: #7a7a7a;
+
+// Utility Colors
+$border-infocus-color:#4fbe69;
+$border-color: #ccc;
+$shadow-color: rgba(0, 0, 0, 0.336);
+

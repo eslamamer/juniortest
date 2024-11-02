@@ -1,0 +1,116 @@
+@import "variables";
+@import "mixins";
+@import "global";
+
+h1 {
+    text-align: center;
+    color:$text-color;
+}
+
+.container {
+    margin: 2rem auto;
+    width: 85%;
+    background-color: $bg-dark;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.item {
+    width: calc(25% - 3rem);
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: $bg-light;
+    margin: .5rem;
+    transition: transform 200ms, box-shadow 200ms;
+    .item-data {
+        text-align: center;
+        font-weight: bold;
+        .item input[type="checkbox"] {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+        p {
+            margin-top: 0;
+        }
+    }
+    &:hover {
+        @include hover-effect('item', $shadow-color);
+    }
+}
+
+.control {
+    width: 100%;
+    margin: 1rem;
+    a {
+        padding: 10px 0;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+.btn-danger {
+    @include btn($danger-color);
+    &:focus {
+        @include hover-effect('btn', $danger-dark);
+    } 
+}
+
+.btn-primary{
+    @include btn($primary-color);
+    &:focus {
+        @include hover-effect('btn', $primary-dark);
+    }
+}
+
+/* Add product form */
+form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        label {
+            margin-bottom: 5px;
+            color: $text-muted;
+            font-weight: bold;
+        }
+        .types {
+            flex-direction: column;
+            align-items: baseline;
+        }
+        input,
+        select {
+       @include form-input;
+
+        &:focus {
+            border-color: $border-infocus-color;
+            outline: none;
+        }
+    }
+}
+
+.error-messages p{
+    background: $danger-color;
+    padding: 10px;
+    text-align: center;
+    color: $bg-light;
+    border-radius: 10px;
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    position: relative;
+    top: 130px;
+    height: 3rem;
+    .control{
+        margin: auto;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+@include media;
