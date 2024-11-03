@@ -7,7 +7,7 @@ error_reporting(E_ALL);
     $mgr = new ProductManager();
     try{
         $displayPro = $mgr->fetchproducts();
-        if(!empty($displayPro)) 
+       // if(!empty($displayPro)) 
         echo json_encode(['display' => $displayPro]);
     }catch(Exception $e){
         echo json_encode(['error' => 'unexpected error: ' .$e->getMessage()]);
