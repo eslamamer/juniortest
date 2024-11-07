@@ -61,7 +61,7 @@
             $this->getId(),
             $this->getSku(),
             $this->getName(),
-            $this->getPrice()
+            $this->getPrice()." $"
         ];
     }
 

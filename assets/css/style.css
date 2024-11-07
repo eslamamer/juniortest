@@ -1,7 +1,7 @@
 /* Global Styles */
 html {
   box-sizing: border-box;
-  font-size: 16px; }
+  font-size: 15.6px; }
 
 body {
   text-transform: capitalize;
@@ -12,40 +12,55 @@ body {
 
 h1 {
   text-align: center;
-  color: #555; }
+  color: #555;
+  margin: 9px; }
 
 .container {
-  margin: 2rem auto;
-  width: 85%;
+  margin: 1rem auto;
+  width: 90%;
+  position: relative;
+  min-height: 27.6rem;
+  border-radius: 15px;
   background-color: #e4e4ed;
-  padding: 2rem;
+  padding: 2rem; }
+
+.items {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-content: center; }
+  margin-top: 4rem; }
+  .items .item {
+    width: calc(25% - 3rem);
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: #fdfdfd;
+    margin: 0.5rem;
+    transition: transform 200ms, box-shadow 200ms; }
+    .items .item .item-data {
+      text-align: center;
+      font-weight: bold; }
+      .items .item .item-data .item input[type="checkbox"] {
+        margin-right: 10px;
+        margin-bottom: 0; }
+      .items .item .item-data p {
+        margin-top: 0; }
+    .items .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.336); }
 
-.item {
-  width: calc(25% - 3rem);
-  border-radius: 15px;
-  padding: 1rem;
-  background-color: #fdfdfd;
-  margin: .5rem;
-  transition: transform 200ms, box-shadow 200ms; }
-  .item .item-data {
-    text-align: center;
-    font-weight: bold; }
-    .item .item-data .item input[type="checkbox"] {
-      margin-right: 10px;
-      margin-bottom: 0; }
-    .item .item-data p {
-      margin-top: 0; }
-  .item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.336); }
-
-.control {
-  width: 100%;
+.control-form {
   margin: 1rem; }
-  .control a {
+  .control-form a {
+    padding: 10px 0;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; }
+
+.control-list {
+  position: absolute;
+  top: 2rem;
+  left: 3rem; }
+  .control-list a {
     padding: 10px 0;
     display: inline-block;
     text-align: center;
@@ -112,34 +127,28 @@ form {
   margin-top: 0; }
 
 footer {
-  text-align: center;
-  position: relative;
-  top: 130px;
-  height: 3rem; }
-  footer .control {
-    margin: auto; }
+  text-align: center; }
   footer p {
-    margin: 0; }
+    margin: 10px; }
 
 @media only screen and (max-width: 480px) {
-  .control {
-    display: flex;
-    margin: auto; }
-    .control a.btn-danger {
+  .control-form, .control-list {
+    margin: 0; }
+    .control-form a.btn-danger, .control-list a.btn-danger {
       height: fit-content; }
-    .control button, .control a, .control input {
-      width: calc(100% / 2);
-      font-size: 10px; }
+    .control-form button, .control-form a, .control-form input, .control-list button, .control-list a, .control-list input {
+      width: 6rem;
+      font-size: 9.5px; }
 
-  .item {
+  .items .item {
     width: calc(100% - 3rem); } }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
-  .item {
+  .items .item {
     width: calc(50% - 3rem); }
-    .item .item-data p:nth-of-type(4) {
+    .items .item .item-data p:nth-of-type(4) {
       font-size: 14px; } }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .item {
+  .items .item {
     width: calc(33.3% - 3rem); } }
 
 /*# sourceMappingURL=style.css.map */

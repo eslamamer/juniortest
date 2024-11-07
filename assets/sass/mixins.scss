@@ -27,37 +27,48 @@
         background-color: $color;
     }
 }
-
+@mixin link-style {
+    padding: 10px 0;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
 @mixin media{
     @media only screen and (max-width: 480px) {
-        .control{
-            display: flex;
-            margin: auto;
+        .control-form, .control-list{
+            margin: 0;
             a.btn-danger{
                 height: fit-content;
             }
             button ,a , input{
-                width:calc(100% / 2);
-                font-size: 10px;
+                width:6rem;
+                font-size: 9.5px;
             }
         }
-        .item{
-            width: calc(100% - 3rem);
-        }      
+        .items{
+            .item{
+                width: calc(100% - 3rem);
+            }  
+        }
+            
     }
     @media only screen and (min-width: 481px) and ( max-width: 768px) {
-        .item{
-            width: calc(50% - 3rem);
-                .item-data{
-                    p:nth-of-type(4){
-                        font-size: 14px;
+        .items{
+            .item{
+                width: calc(50% - 3rem);
+                    .item-data{
+                        p:nth-of-type(4){
+                            font-size: 14px;
+                    }
                 }
             }
-        }
+        } 
     }
     @media only screen and (min-width: 769px) and (max-width: 1024px) {
-           .item{
-                width: calc(33.3% - 3rem);     
-            }
+            .items{
+                .item{
+                    width: calc(33.3% - 3rem);     
+                }
+            } 
         }        
     }

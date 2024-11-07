@@ -5,49 +5,61 @@
 h1 {
     text-align: center;
     color:$text-color;
+    margin: 9px;
 }
 
 .container {
-    margin: 2rem auto;
-    width: 85%;
+    margin: 1rem auto;
+    width: 90%;
+    position: relative;
+    min-height: 27.6rem;
+    border-radius: 15px;
     background-color: $bg-dark;
     padding: 2rem;
+}
+.items{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
-}
-
-.item {
-    width: calc(25% - 3rem);
-    border-radius: 15px;
-    padding: 1rem;
-    background-color: $bg-light;
-    margin: .5rem;
-    transition: transform 200ms, box-shadow 200ms;
-    .item-data {
-        text-align: center;
-        font-weight: bold;
-        .item input[type="checkbox"] {
-            margin-right: 10px;
-            margin-bottom: 0;
+    margin-top:4rem;
+    .item {
+        width: calc(25% - 3rem);
+        border-radius: 15px;
+        padding: 1rem;
+        background-color: $bg-light;
+        margin:0.5rem;
+        transition: transform 200ms, box-shadow 200ms;
+        .item-data {
+            text-align: center;
+            font-weight: bold;
+            .item input[type="checkbox"] {
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
+            p {
+                margin-top: 0;
+            }
         }
-        p {
-            margin-top: 0;
+        &:hover {
+            @include hover-effect('item', $shadow-color);
         }
     }
-    &:hover {
-        @include hover-effect('item', $shadow-color);
-    }
+    
 }
 
-.control {
-    width: 100%;
+.control-form {
     margin: 1rem;
     a {
-        padding: 10px 0;
-        display: inline-block;
-        text-align: center;
-        text-decoration: none;
+        @include link-style
+     }
+}
+
+.control-list{
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    a {
+       @include link-style
     }
 }
 
@@ -101,15 +113,9 @@ form {
 }
 
 footer {
-    text-align: center;
-    position: relative;
-    top: 130px;
-    height: 3rem;
-    .control{
-        margin: auto;
-    }
+    text-align: center;  
     p {
-        margin: 0;
+        margin: 10px;
     }
 }
 

@@ -23,6 +23,7 @@
                 $pro = $this->factory->createProduct($data);
                 $pro->save($this->con);
                 $this->con->commit();
+                return $pro->getId();
             }catch(PDOException $e){
                 $this->con->rollBack();
                 throw new Exception('Save Error:' .$e->getMessage());
