@@ -94,7 +94,6 @@
          }
          public function display(){ 
             $proProps = parent::display();
-            // echo "<p>dimension: " . $this->getHeight() .'×'. $this->getWidth() .'×'. $this->getLength() ."</p>";
             $proProps[] = "dimension: " . $this->getHeight() .'×'. $this->getWidth() .'×'. $this->getLength();
             return $proProps;
         }

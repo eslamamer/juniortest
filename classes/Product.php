@@ -71,17 +71,13 @@
             $name = $this->getName();
             $price= $this->getPrice();
             $type = $this->getType();
-            //if(!$this->isSkuExist($sku, $con)){
-                $stmt = $con->prepare("insert into products(sku, name, price, type_id) values(:nsku, :nname, :nprice, :type_id)");
-                $stmt->bindParam(':nsku'   , $sku  , PDO::PARAM_STR);
-                $stmt->bindParam(':nname'  , $name , PDO::PARAM_STR);
-                $stmt->bindParam(':nprice' , $price, PDO::PARAM_STR);
-                $stmt->bindParam(':type_id', $type , PDO::PARAM_INT);
-                $stmt->execute();
-                $this->setId($con->lastInsertId());
-           // }else{
-            //    throw new Exception("existing SKU");
-            //} 
+            $stmt = $con->prepare("insert into products(sku, name, price, type_id) values(:nsku, :nname, :nprice, :type_id)");
+            $stmt->bindParam(':nsku'   , $sku  , PDO::PARAM_STR);
+            $stmt->bindParam(':nname'  , $name , PDO::PARAM_STR);
+            $stmt->bindParam(':nprice' , $price, PDO::PARAM_STR);
+            $stmt->bindParam(':type_id', $type , PDO::PARAM_INT);
+            $stmt->execute();
+            $this->setId($con->lastInsertId());
         }catch(Exception $e){
             throw new Exception("save error". $e->getMessage());
         }   
